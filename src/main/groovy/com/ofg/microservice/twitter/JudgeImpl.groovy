@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate
 @Service
 class JudgeImpl implements Judge{
 
-    public static final String IMPORTANCE_JUDGE_CONTENT_TYPE_HEADER = 'application/vnd.com.ofg.importance-judge.v1+json'
+    public static final String IMPORTANCE_JUDGE_CONTENT_TYPE_HEADER = 'vnd.com.ofg.importance-judge.v1+json'
     public static final MediaType IMPORTANCE_JUDGE_MEDIA_TYPE = new MediaType('application', IMPORTANCE_JUDGE_CONTENT_TYPE_HEADER)
 
     private ServiceResolver serviceResolver
