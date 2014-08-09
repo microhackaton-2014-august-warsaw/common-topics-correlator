@@ -7,7 +7,7 @@ import groovy.transform.CompileStatic
 @Canonical
 class CorrelationDto {
 
-    private String pairId;
-    private String correlatorType;  //TODO: Enum
-    private List<RelationshipDto> relationships
+    String pairId;
+    String correlatorType;  //TODO: Enum
+    List<RelationshipDto> relationships
 }
