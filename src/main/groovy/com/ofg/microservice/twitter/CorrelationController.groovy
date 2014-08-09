@@ -14,16 +14,17 @@ import java.lang.invoke.MethodHandles
 class CorrelationController {
     private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    private TwitterCollector collectorWorker
+    private CorrelationTopicsService correlationTopicsService
 
     @Autowired
-    CorrelationController(TwitterCollector collectorWorker) {
-        this.collectorWorker = collectorWorker
+    CorrelationController(CorrelationTopicsService correlationTopicsService) {
+        this.correlationTopicsService = correlationTopicsService
     }
 
     @ResponseStatus(value = HttpStatus.OK)
     @RequestMapping(value = "/correlations", produces="application/json", method = RequestMethod.POST)
-    void correlate(@RequestBody String correlation) {
-        log.info("Correlation: {}", correlation)    //TODO: Replace with a dedicated class
+    void correlate(@RequestBody CorrelationRequest correlationRequest) {
+        log.info("Correlation: {}", correlationRequest)
+        correlationTopicsService.correlate(correlationRequest)
     }
 }
