@@ -12,6 +12,7 @@ class Correlation {
         Correlation correlation = new Correlation(pairId: correlationRequest.pairId)
         correlation.entries = new ArrayList<>()
         correlation.addRequest(correlationRequest)
+        return correlation
     }
 
     void addRequest(CorrelationRequest correlationRequest) {
