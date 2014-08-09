@@ -1,10 +1,13 @@
-package com.ofg.microservice.twitter;
+package com.ofg.microservice.twitter
+
+import org.springframework.stereotype.Repository;
 
 import java.util.Map;
 
 /**
  * Created by pawel on 09.08.14.
  */
+@Repository
 class CorrelationRepositoryInMemoryImpl implements CorrelationRepository  {
 
     Map<String, Correlation> database = [:]
