@@ -44,7 +44,6 @@ class FakeCorrelationController {
         log.info("CorrelationTest: {}", correlation)    //TODO: Replace with a dedicated class
         String judgeUrl = serviceResolver.getUrl("importance-judge").get()
         restTemplate.put("$judgeUrl/relationships", createEntity(createTestCorrelation()))
-
     }
 
     CorrelationDto createTestCorrelation() {
