@@ -1,8 +1,8 @@
 package com.ofg.microservice
 
-import groovy.transform.TypeChecked
+import groovy.transform.CompileStatic
 
-@TypeChecked
+@CompileStatic
 class Profiles {
     // WARNING: these have to be explicit public (even though it's groovy) because otherwise we cannot use them in tests
     // for more info: http://jira.codehaus.org/browse/GROOVY-3278

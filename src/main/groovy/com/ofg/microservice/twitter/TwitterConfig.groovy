@@ -1,5 +1,6 @@
 package com.ofg.microservice.twitter
-import groovy.transform.TypeChecked
+
+import groovy.transform.CompileStatic
 import net.sf.ehcache.config.CacheConfiguration
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
@@ -11,7 +12,7 @@ import org.springframework.social.twitter.api.Twitter
 import org.springframework.social.twitter.api.impl.TwitterTemplate
 
 @Configuration
-@TypeChecked
+@CompileStatic
 class TwitterConfig {
     @Bean
     @Autowired

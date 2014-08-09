@@ -1,7 +1,7 @@
 package com.ofg.microservice.twitter
 
+import groovy.transform.CompileStatic
 import groovy.transform.PackageScope
-import groovy.transform.TypeChecked
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.cache.annotation.Cacheable
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component
 import static org.springframework.util.Assert.notNull
 import static org.springframework.util.StringUtils.hasText
 
-@TypeChecked
+@CompileStatic
 @Component
 @PackageScope
 class TweetsGetter {

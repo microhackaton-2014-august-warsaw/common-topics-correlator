@@ -2,22 +2,17 @@ package com.ofg.microservice.twitter
 
 import com.ofg.infrastructure.discovery.ServiceResolver
 import com.ofg.infrastructure.web.filter.correlationid.CorrelationIdHolder
+import groovy.transform.CompileStatic
 import groovy.transform.PackageScope
-import groovy.transform.TypeChecked
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.http.HttpEntity
 import org.springframework.http.HttpHeaders
 import org.springframework.http.MediaType
-import org.springframework.scheduling.annotation.Async
 import org.springframework.social.twitter.api.Tweet
 import org.springframework.stereotype.Component
 import org.springframework.web.client.RestTemplate
 
-import static org.springframework.http.MediaType.APPLICATION_JSON
-import static org.springframework.http.MediaType.parseMediaType
-
-@TypeChecked
+@CompileStatic
 @Component
 @PackageScope class TwitterCollectorWorker implements TwitterCollector  {
 
