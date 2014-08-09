@@ -4,21 +4,12 @@ import com.ofg.infrastructure.discovery.ServiceResolver
 import com.ofg.infrastructure.web.filter.correlationid.CorrelationIdHolder
 import com.ofg.microservice.twitter.dto.CorrelationDto
 import com.ofg.microservice.twitter.dto.Relationship
-import org.slf4j.Logger
-import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpEntity
 import org.springframework.http.HttpHeaders
-import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.stereotype.Service
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestMethod
-import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.client.RestTemplate
-
-import java.lang.invoke.MethodHandles
 
 /**
  * Created by pawel on 09.08.14.
@@ -43,12 +34,11 @@ class JudgeImpl implements Judge{
 
         String judgeUrl = serviceResolver.getUrl("importance-judge").get()
         restTemplate.put("$judgeUrl/relationships", createEntity(
-                createTestCorrelation(pairId, matches)))
-
+                createRelationships(pairId, matches)))
     }
 
-    CorrelationDto createTestCorrelation(String pairId, List<CorrelationMatch> matches) {
-        new CorrelationDto(pairId: pairId, correlatorType: "twitter",
+    CorrelationDto createRelationships(String pairId, List<CorrelationMatch> matches) {
+        new CorrelationDto(pairId: pairId, correlatorType: "topic",
                 relationships: matches.collect { new Relationship(score: it.score, description: it.topic) })
     }
 

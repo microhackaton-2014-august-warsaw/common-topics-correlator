@@ -7,6 +7,6 @@ import groovy.transform.CompileStatic
 @Canonical
 class Relationship {
 
-    private int score
-    private String description
+    int score
+    String description
 }
