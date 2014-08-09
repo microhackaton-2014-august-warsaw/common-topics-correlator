@@ -23,7 +23,11 @@ class CorrelationTopicsService {
 
         Correlation correlation = repository.findByPairId(correlationRequest.pairId)
         if(correlation != null) {
-            // second and others
+            if (correlation.isCompleted()){
+                // third request and so on
+                return
+            }
+            // second request
             correlation.addRequest(correlationRequest)
             judge.send(correlation.pairId, correlation.generateMatches())
         } else {
