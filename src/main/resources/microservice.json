@@ -2,7 +2,7 @@
     "pl": {
         "this": "pl/microhackaton/common-topics-correlator",
         "dependencies": {
-            "analyzer" : "pl/microhackaton/importance-judge"
+            "importance-judge" : "pl/microhackaton/importance-judge"
         }
     }
 }
