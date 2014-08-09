@@ -1,4 +1,4 @@
-twitter-topics-analyzer
+common-topics-correlator
 =================
 
 Microservice collecting tweets
