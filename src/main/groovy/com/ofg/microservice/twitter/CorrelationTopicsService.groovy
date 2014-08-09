@@ -1,6 +1,7 @@
 package com.ofg.microservice.twitter
 
 import com.ofg.infrastructure.discovery.ServiceResolver
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 /**
@@ -12,6 +13,7 @@ class CorrelationTopicsService {
     private final CorrelationRepository repository
     private final Judge judge
 
+    @Autowired
     CorrelationTopicsService(CorrelationRepository repository, Judge judge) {
         this.repository = repository
         this.judge = judge
