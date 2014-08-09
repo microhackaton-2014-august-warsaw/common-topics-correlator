@@ -33,7 +33,7 @@ class JudgeImpl implements Judge{
     void send(String pairId, List<CorrelationMatch> matches) {
 
         String judgeUrl = serviceResolver.getUrl("importance-judge").get()
-        restTemplate.put("$judgeUrl/relationships", createEntity(
+        restTemplate.put("$judgeUrl/relationship", createEntity(
                 createRelationships(pairId, matches)))
     }
 
