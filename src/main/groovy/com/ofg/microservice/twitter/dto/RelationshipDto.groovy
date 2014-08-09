@@ -5,7 +5,7 @@ import groovy.transform.CompileStatic
 
 @CompileStatic
 @Canonical
-class Relationship {
+class RelationshipDto {
 
     int score
     String description

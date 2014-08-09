@@ -1,5 +1,8 @@
 package com.ofg.microservice.twitter
 
+import groovy.transform.Canonical
+
+@Canonical
 class Correlation {
 
     String pairId

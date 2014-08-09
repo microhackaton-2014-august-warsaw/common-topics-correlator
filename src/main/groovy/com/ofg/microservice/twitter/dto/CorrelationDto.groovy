@@ -9,5 +9,5 @@ class CorrelationDto {
 
     private String pairId;
     private String correlatorType;  //TODO: Enum
-    private List<Relationship> relationships
+    private List<RelationshipDto> relationships
 }

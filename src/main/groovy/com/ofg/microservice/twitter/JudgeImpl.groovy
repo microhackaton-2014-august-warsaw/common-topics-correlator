@@ -3,7 +3,7 @@ package com.ofg.microservice.twitter
 import com.ofg.infrastructure.discovery.ServiceResolver
 import com.ofg.infrastructure.web.filter.correlationid.CorrelationIdHolder
 import com.ofg.microservice.twitter.dto.CorrelationDto
-import com.ofg.microservice.twitter.dto.Relationship
+import com.ofg.microservice.twitter.dto.RelationshipDto
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpEntity
 import org.springframework.http.HttpHeaders
@@ -39,7 +39,7 @@ class JudgeImpl implements Judge{
 
     CorrelationDto createRelationships(String pairId, List<CorrelationMatch> matches) {
         new CorrelationDto(pairId: pairId, correlatorType: "topic",
-                relationships: matches.collect { new Relationship(score: it.score, description: it.topic) })
+                relationships: matches.collect { new RelationshipDto(score: it.score, description: it.topic) })
     }
 
     private HttpEntity<Object> createEntity(Object object) {

@@ -4,7 +4,7 @@ import com.ofg.infrastructure.discovery.ServiceResolver
 import com.ofg.infrastructure.web.filter.correlationid.CorrelationIdHolder
 import com.ofg.infrastructure.web.resttemplate.RestTemplate
 import com.ofg.microservice.twitter.dto.CorrelationDto
-import com.ofg.microservice.twitter.dto.Relationship
+import com.ofg.microservice.twitter.dto.RelationshipDto
 import groovy.transform.CompileStatic
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -47,7 +47,7 @@ class FakeCorrelationController {
     }
 
     CorrelationDto createTestCorrelation() {
-        new CorrelationDto(pairId: "1", correlatorType: "twitter", relationships: [new Relationship(score: 8, description: "scala")])
+        new CorrelationDto(pairId: "1", correlatorType: "twitter", relationships: [new RelationshipDto(score: 8, description: "scala")])
     }
 
     private HttpEntity<Object> createEntity(Object object) {
